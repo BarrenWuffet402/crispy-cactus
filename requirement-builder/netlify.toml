@@ -1,0 +1,5 @@
+# Static site — no build step.
+# Netlify "base directory" for this site must be set to this folder.
+[build]
+  command = ""
+  publish = "."
