@@ -582,5 +582,22 @@ function Recorder(){
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 </script>
+
+<!-- ★ Hermes proof-of-deploy badge -->
+<div id="hermes-star" role="status" aria-label="Deployed by Hermes" style="
+  position:fixed; right:16px; bottom:16px; z-index:9999;
+  display:flex; align-items:center; gap:9px;
+  font-family:'Space Grotesk',system-ui,sans-serif; font-size:13px; font-weight:600;
+  color:#fff; background:#2B4C6F; padding:9px 15px 9px 12px;
+  border-radius:999px; box-shadow:0 8px 26px rgba(20,27,34,.28);">
+  <span aria-hidden="true" style="font-size:17px; line-height:1; display:inline-block;
+    animation:hermes-spin 6s linear infinite; color:#FFC24B;">&#9733;</span>
+  <span>Deployed by Hermes &middot; <time>2026-08-15 14:30 UTC</time></span>
+</div>
+<style>
+  @keyframes hermes-spin{ to{ transform:rotate(360deg) } }
+  @media (prefers-reduced-motion: reduce){ #hermes-star span[aria-hidden]{ animation:none } }
+</style>
+
 </body>
 </html>
