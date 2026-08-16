@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Smaragdify — Natural Colombian Emeralds on Silver</title>
+<meta name="description" content="Smaragdify AS — natural, clear green emeralds from the mines of Colombia, set in sterling silver rings and earrings. Not synthetic. Beautiful gifts and fine jewellery, delivered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --emerald:#0b6b4f; --emerald-2:#0f8a63; --emerald-deep:#083d2e; --emerald-glow:#1fbf8f;
+    --silver:#c9ccce; --silver-2:#e7e9ea; --platinum:#f6f5f2;
+    --ink:#1a201d; --ink-soft:#46524c; --muted:#8a938e;
+    --cream:#faf8f3; --card:#ffffff; --line:#e8e6df;
+    --gold:#b9975b;
+    --shadow-sm:0 1px 3px rgba(11,45,34,.06),0 6px 18px rgba(11,45,34,.06);
+    --shadow-md:0 14px 44px rgba(11,45,34,.14);
+    --r:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Jost",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:.01em;line-height:1.08}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1180px,92%);margin:0 auto}
+  .em{color:var(--emerald)}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--emerald);font-weight:500}
+
+  /* image slot: shows photo when present, elegant placeholder until then */
+  .imgslot{position:relative;overflow:hidden;background:
+     linear-gradient(135deg,var(--emerald-deep),var(--emerald) 55%,var(--emerald-glow));}
+  .imgslot img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
+  .imgslot .ph{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:rgba(255,255,255,.85);padding:16px;gap:6px}
+  .imgslot .ph .g{font-size:34px}
+  .imgslot .ph small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:60;background:rgba(250,248,243,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--emerald-glow),var(--emerald) 60%,var(--emerald-deep));box-shadow:inset 0 2px 6px rgba(255,255,255,.35),var(--shadow-sm)}
+  .brand .nm{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;letter-spacing:.02em}
+  .brand small{display:block;font-family:"Jost";font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:-4px}
+  .navlinks{display:flex;gap:30px;font-size:14px;color:var(--ink-soft);font-weight:400}
+  .navlinks a:hover{color:var(--emerald)}
+  @media(max-width:820px){.navlinks{display:none}}
+  .cartbtn{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--emerald);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;border:0}
+  .cartbtn:hover{background:var(--emerald-2)}
+  .cartbtn .count{background:var(--gold);color:#231a06;font-size:11px;font-weight:600;min-width:20px;height:20px;border-radius:999px;display:grid;place-items:center;padding:0 5px}
+
+  /* HERO */
+  .hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:0;min-height:min(88vh,760px);background:var(--emerald-deep)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}}
+  .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,90px);color:#f4f1e9;
+    background:radial-gradient(700px 500px at 15% 20%,rgba(31,191,143,.22),transparent 60%),var(--emerald-deep)}
+  .hero-copy .eyebrow{color:var(--emerald-glow)}
+  .hero-copy h1{font-size:clamp(40px,6vw,74px);margin:18px 0 0;color:#fbfaf6}
+  .hero-copy h1 span{font-style:italic;color:var(--emerald-glow)}
+  .hero-copy p{font-size:clamp(16px,1.6vw,19px);color:#cfe6dc;margin:22px 0 32px;max-width:46ch}
+  .hero-slot{min-height:340px}
+  .hero-badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font-size:13px;color:#bcd8cc}
+  .hero-badges b{display:block;font-family:"Cormorant Garamond",serif;font-size:22px;color:#fff;font-weight:600;line-height:1}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:"Jost";font-weight:500;font-size:15px;padding:15px 30px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:.18s}
+  .btn.primary{background:var(--emerald-glow);color:#04231a}
+  .btn.primary:hover{background:#37d3a2;transform:translateY(-2px)}
+  .btn.ghost{border-color:rgba(255,255,255,.4);color:#fff}
+  .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn.dark{background:var(--emerald);color:#fff}
+  .btn.dark:hover{background:var(--emerald-2)}
+
+  /* trust strip */
+  .strip{background:var(--emerald);color:#eafff6;font-size:13.5px;letter-spacing:.04em}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:34px;padding:14px 0;text-align:center}
+  .strip span{display:inline-flex;align-items:center;gap:8px}
+
+  section{padding:clamp(56px,8vw,104px) 0}
+  .sec-head{text-align:center;max-width:60ch;margin:0 auto 48px}
+  .sec-head h2{font-size:clamp(30px,4.6vw,50px);margin-top:10px}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:17px}
+
+  /* PRODUCTS */
+  .cats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:38px}
+  .cats button{font:inherit;font-size:14px;color:var(--ink-soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 20px;cursor:pointer;transition:.15s}
+  .cats button:hover{border-color:var(--emerald)}
+  .cats button.active{background:var(--emerald);color:#fff;border-color:var(--emerald)}
+  .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px}
+  .product{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.2s;display:flex;flex-direction:column}
+  .product:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .product .imgslot{aspect-ratio:1/1}
+  .product .tag{position:absolute;top:12px;left:12px;z-index:3;background:rgba(255,255,255,.92);color:var(--emerald);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .product .body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .product h3{font-size:24px}
+  .product .desc{font-size:13.5px;color:var(--muted);flex:1}
+  .product .row{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+  .product .price{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;color:var(--ink)}
+  .product .price small{font-size:13px;color:var(--muted);font-family:"Jost"}
+  .add{font:inherit;font-size:13.5px;font-weight:500;background:var(--emerald);color:#fff;border:0;border-radius:999px;padding:10px 18px;cursor:pointer;transition:.15s}
+  .add:hover{background:var(--emerald-2)}
+  .add.added{background:var(--gold);color:#231a06}
+
+  /* STORY / why natural */
+  .story{background:var(--platinum)}
+  .story .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  @media(max-width:880px){.story .split{grid-template-columns:1fr;gap:34px}}
+  .story .imgslot{aspect-ratio:4/5;border-radius:var(--r);box-shadow:var(--shadow-md)}
+  .story h2{font-size:clamp(28px,4vw,44px)}
+  .story ul{list-style:none;margin-top:24px;display:grid;gap:18px}
+  .story li{display:flex;gap:14px;align-items:flex-start}
+  .story li .c{flex:none;width:30px;height:30px;border-radius:50%;background:var(--emerald);color:#fff;display:grid;place-items:center;font-size:14px}
+  .story li b{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
+  .story li p{color:var(--ink-soft);font-size:14.5px;margin-top:2px}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:14px}
+  @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery .cell{aspect-ratio:1/1;border-radius:12px;cursor:pointer;transition:.2s}
+  .gallery .cell:hover{transform:scale(1.02);box-shadow:var(--shadow-md)}
+  .gallery .cell.wide{grid-column:span 2}
+  .gallery .cell.tall{grid-row:span 2;aspect-ratio:auto}
+  @media(max-width:900px){.gallery .cell.wide{grid-column:span 2}.gallery .cell.tall{grid-row:span 1;aspect-ratio:1/1}}
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(8,20,15,.92);display:none;align-items:center;justify-content:center;padding:24px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:90vw;max-height:86vh;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,.5)}
+  .lightbox .x{position:absolute;top:20px;right:24px;color:#fff;font-size:30px;cursor:pointer;background:none;border:0}
+  .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:34px;cursor:pointer;background:none;border:0;padding:20px}
+  .lightbox .prev{left:8px}.lightbox .next{right:8px}
+
+  /* GIFTS band */
+  .gifts{background:var(--emerald-deep);color:#eaf7f0}
+  .gifts .sec-head h2{color:#fff}.gifts .sec-head p{color:#bcd8cc}
+  .giftgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.giftgrid{grid-template-columns:1fr}}
+  .gift{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:30px 26px;text-align:center}
+  .gift .g{font-size:34px;margin-bottom:12px}
+  .gift h3{font-size:24px;color:#fff}
+  .gift p{color:#bcd8cc;font-size:14px;margin-top:8px}
+
+  /* CONTACT */
+  .contact .split{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  @media(max-width:820px){.contact .split{grid-template-columns:1fr}}
+  .contact-detail{display:grid;gap:18px;margin-top:24px}
+  .cd{display:flex;gap:14px;align-items:flex-start}
+  .cd .i{flex:none;width:42px;height:42px;border-radius:10px;background:var(--emerald);color:#fff;display:grid;place-items:center;font-size:18px}
+  .cd b{font-family:"Cormorant Garamond",serif;font-size:19px}
+  .cd p{color:var(--ink-soft);font-size:14.5px}
+  .form{display:grid;gap:14px}
+  .form label{font-size:13px;color:var(--ink-soft);display:block;margin-bottom:6px}
+  .form input,.form textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .form input:focus,.form textarea:focus{outline:2px solid var(--emerald);outline-offset:1px;border-color:transparent}
+  .form textarea{min-height:110px;resize:vertical}
+  .form-msg{font-size:14px;color:var(--emerald);min-height:20px;font-weight:500}
+
+  footer{background:var(--emerald-deep);color:#9dc3b4;padding:44px 0;text-align:center;font-size:13.5px}
+  footer .brand{justify-content:center;margin-bottom:14px}
+  footer .brand .nm{color:#fff}
+  footer a.back{color:var(--emerald-glow)}
+  .demo{display:inline-block;margin-top:14px;font-size:11px;color:var(--emerald-glow);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px}
+
+  /* CART DRAWER */
+  .overlay{position:fixed;inset:0;background:rgba(8,20,15,.4);z-index:80;opacity:0;pointer-events:none;transition:.25s}
+  .overlay.open{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--cream);z-index:90;transform:translateX(100%);transition:.3s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2)}
+  .drawer.open{transform:none}
+  .drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+  .drawer .dh h3{font-size:24px}
+  .drawer .dh .x{font-size:26px;background:none;border:0;cursor:pointer;color:var(--ink-soft)}
+  .drawer .items{flex:1;overflow-y:auto;padding:12px 22px}
+  .citem{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .citem .th{width:60px;height:60px;border-radius:8px;flex:none}
+  .citem .info{flex:1;min-width:0}
+  .citem .info .n{font-weight:500;font-size:14px}
+  .citem .info .p{color:var(--muted);font-size:13px}
+  .citem .qty{display:flex;align-items:center;gap:8px;margin-top:6px}
+  .citem .qty button{width:24px;height:24px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer;font-size:14px}
+  .citem .rm{background:none;border:0;color:var(--muted);cursor:pointer;font-size:12px;align-self:flex-start}
+  .citem .rm:hover{color:#b4442e}
+  .empty{text-align:center;color:var(--muted);padding:50px 20px}
+  .drawer .foot{border-top:1px solid var(--line);padding:20px 22px}
+  .drawer .tot{display:flex;justify-content:space-between;font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;margin-bottom:14px}
+  .checkout-fields{display:none;gap:10px;margin-bottom:14px}
+  .checkout-fields.show{display:grid}
+  .checkout-fields input,.checkout-fields select{width:100%;font:inherit;font-size:13.5px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:#fff}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .ok-msg{background:var(--emerald);color:#fff;border-radius:10px;padding:16px;text-align:center;font-size:14px;display:none}
+  .ok-msg.show{display:block}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top"><span class="logo"></span><span><span class="nm">Smaragdify</span><small>Natural Colombian Emeralds</small></span></a>
+    <div class="navlinks">
+      <a href="#shop">Shop</a><a href="#story">Why natural</a><a href="#gallery">Gallery</a><a href="#gifts">Gifts</a><a href="#contact">Contact</a>
+    </div>
+    <button class="cartbtn" onclick="openCart()">Cart <span class="count" id="cartCount">0</span></button>
+  </nav>
+</header>
+
+<a id="top"></a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">From the mines of Colombia · Not synthetic</span>
+    <h1>Emeralds that hold a <span>living</span> green.</h1>
+    <p>Natural, clear Colombian emeralds — hand-set in sterling silver rings and earrings. Each stone is earth-formed, never lab-made. A quiet luxury you can wear every day, or give to someone who deserves it.</p>
+    <div class="cta-row" style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="#shop" class="btn primary">Shop the collection →</a>
+      <a href="#story" class="btn ghost">Why natural emeralds</a>
+    </div>
+    <div class="hero-badges">
+      <div><b>100%</b>Natural, mined</div>
+      <div><b>925</b>Sterling silver</div>
+      <div><b>Free</b>Insured delivery</div>
+    </div>
+  </div>
+  <div class="imgslot hero-slot" data-slot="hero">
+    <img src="images/hero.jpg" alt="Colombian emerald ring in sterling silver" onerror="this.style.display='none'">
+    <div class="ph"><span class="g">💚</span><span class="serif" style="font-size:28px;color:#fff">Your hero image</span><small>images/hero.jpg</small></div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap">
+  <span>✦ Natural, earth-mined stones</span><span>✦ Ethically sourced from Colombia</span><span>✦ Sterling silver settings</span><span>✦ Certificate of authenticity</span>
+</div></div>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">The Collection</span><h2>Rings &amp; earrings, set with real emerald</h2><p>Every piece features a genuine Colombian emerald. Choose your favourite — or find a gift that lasts a lifetime.</p></div>
+    <div class="cats" id="cats"></div>
+    <div class="products" id="products"></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="story">
+  <div class="wrap split">
+    <div class="imgslot" data-slot="story">
+      <img src="images/story.jpg" alt="Raw emerald from a Colombian mine" onerror="this.style.display='none'">
+      <div class="ph"><span class="g">⛏️</span><span class="serif" style="font-size:24px;color:#fff">Mine / craft image</span><small>images/story.jpg</small></div>
+    </div>
+    <div>
+      <span class="eyebrow">Why natural</span>
+      <h2>Born in the earth, not a laboratory.</h2>
+      <p style="color:var(--ink-soft);margin-top:14px;font-size:16px">Synthetic emeralds are grown in factories in weeks. Ours were formed over millions of years beneath the Colombian Andes — home to the finest, greenest emeralds on earth. That difference is something you can see, and something you can feel.</p>
+      <ul>
+        <li><span class="c">✓</span><div><b>Genuinely natural</b><p>Earth-mined stones — never lab-grown or synthetic. Each carries its own unique inclusions and character.</p></div></li>
+        <li><span class="c">✓</span><div><b>Colombian origin</b><p>From the legendary mines of Colombia, prized worldwide for their pure, vivid green.</p></div></li>
+        <li><span class="c">✓</span><div><b>Clear and brilliant</b><p>Hand-selected for clarity and colour, then set in polished sterling silver.</p></div></li>
+        <li><span class="c">✓</span><div><b>Certified &amp; insured</b><p>Every order includes a certificate of authenticity and fully insured delivery.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Gallery</span><h2>Look closer</h2><p>Tap any image to view it full-size.</p></div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- GIFTS -->
+<section id="gifts" class="gifts">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Made to be given</span><h2>The gift of green</h2><p>An emerald is May's birthstone and a symbol of love and renewal — a present that's remembered.</p></div>
+    <div class="giftgrid">
+      <div class="gift"><div class="g">💍</div><h3>For her</h3><p>A ring or pair of earrings she'll reach for again and again.</p></div>
+      <div class="gift"><div class="g">🎁</div><h3>Anniversaries</h3><p>The 20th &amp; 35th anniversary stone — and any occasion worth marking.</p></div>
+      <div class="gift"><div class="g">🌿</div><h3>Just because</h3><p>Gift-wrapped, with a handwritten note, delivered to the door.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a href="#shop" class="btn primary">Find a gift →</a></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Smaragdify AS</span>
+      <h2 style="font-size:clamp(28px,4vw,44px);margin-top:8px">Questions? Reach out.</h2>
+      <p style="color:var(--ink-soft);margin-top:12px">Looking for something specific — a certain carat, a custom setting, or a bespoke gift? We're happy to help.</p>
+      <div class="contact-detail">
+        <div class="cd"><span class="i">✉️</span><div><b>Email</b><p><a href="mailto:hello@smaragdify.no">hello@smaragdify.no</a></p></div></div>
+        <div class="cd"><span class="i">📞</span><div><b>Phone</b><p><a href="tel:+4700000000">+47 000 00 000</a></p></div></div>
+        <div class="cd"><span class="i">🏢</span><div><b>Smaragdify AS</b><p>Org.nr 000 000 000 · Norway</p></div></div>
+      </div>
+    </div>
+    <form class="form" id="contactForm">
+      <div><label for="cname">Name</label><input id="cname" required placeholder="Your name"></div>
+      <div><label for="cemail">Email</label><input id="cemail" type="email" required placeholder="you@email.com"></div>
+      <div><label for="cmsg">Message</label><textarea id="cmsg" required placeholder="How can we help?"></textarea></div>
+      <button type="submit" class="btn dark">Send message</button>
+      <div class="form-msg" id="contactMsg" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo"></span><span class="nm">Smaragdify</span></a>
+    <p>© <span id="yr"></span> Smaragdify AS — natural Colombian emeralds, set in sterling silver.</p>
+    <p style="margin-top:8px"><a class="back" href="../index.html">← Back to Tronrud Sveis</a></p>
+    <span class="demo">✦ Draft — product photos, prices, org.nr and contact details to be finalised</span>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="dh"><h3>Your cart</h3><button class="x" onclick="closeCart()" aria-label="Close">×</button></div>
+  <div class="items" id="cartItems"></div>
+  <div class="foot" id="cartFoot" style="display:none">
+    <div class="tot"><span>Total</span><span id="cartTotal">kr 0</span></div>
+    <div class="checkout-fields" id="checkoutFields">
+      <input id="ship-name" placeholder="Full name" required>
+      <input id="ship-email" type="email" placeholder="Email" required>
+      <input id="ship-addr" placeholder="Street address" required>
+      <div class="row2"><input id="ship-zip" placeholder="Postcode" required><input id="ship-city" placeholder="City" required></div>
+      <select id="ship-method">
+        <option value="0">Standard delivery — free (3–5 days)</option>
+        <option value="149">Express delivery — kr 149 (1–2 days)</option>
+      </select>
+    </div>
+    <div class="ok-msg" id="okMsg"></div>
+    <button class="btn dark" style="width:100%;justify-content:center" id="checkoutBtn" onclick="checkout()">Checkout</button>
+  </div>
+</aside>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="x" onclick="closeLb()" aria-label="Close">×</button>
+  <button class="nav prev" onclick="lbStep(-1)" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="nav next" onclick="lbStep(1)" aria-label="Next">›</button>
+</div>
+
+<script>
+/* ─────────── DATA — swap image paths / prices here ───────────
+   Drop your photos into an /images folder next to this file, e.g.
+   images/ring-esmeralda.jpg — they appear automatically. Until then,
+   an elegant green placeholder shows in each slot. */
+const PRODUCTS=[
+  {id:'r1',cat:'Rings',name:'Esmeralda Solitaire Ring',desc:'A single clear Colombian emerald on a slim polished silver band.',price:2490,img:'images/ring-1.jpg',tag:'Bestseller'},
+  {id:'r2',cat:'Rings',name:'Andes Halo Ring',desc:'Emerald centre framed by a silver halo — brilliant and bold.',price:3290,img:'images/ring-2.jpg'},
+  {id:'r3',cat:'Rings',name:'Verde Stacking Ring',desc:'A delicate emerald accent, made to stack or stand alone.',price:1690,img:'images/ring-3.jpg'},
+  {id:'e1',cat:'Earrings',name:'Rocío Emerald Studs',desc:'Everyday elegance — natural emerald studs in sterling silver.',price:1890,img:'images/ear-1.jpg',tag:'New'},
+  {id:'e2',cat:'Earrings',name:'Cascada Drop Earrings',desc:'Emeralds that catch the light with every movement.',price:2790,img:'images/ear-2.jpg'},
+  {id:'e3',cat:'Earrings',name:'Bogotá Huggie Hoops',desc:'Small silver hoops set with a line of green emerald.',price:2190,img:'images/ear-3.jpg'},
+  {id:'g1',cat:'Gift sets',name:'Esmeralda Gift Set',desc:'Matching ring & studs, gift-boxed with a handwritten note.',price:3990,img:'images/set-1.jpg',tag:'Gift'},
+  {id:'g2',cat:'Gift sets',name:'May Birthstone Duo',desc:'Two pieces for the emerald-born — beautifully presented.',price:3490,img:'images/set-2.jpg'},
+];
+const GALLERY=[
+  {img:'images/gallery-1.jpg',cls:'tall'},{img:'images/gallery-2.jpg',cls:''},{img:'images/gallery-3.jpg',cls:''},
+  {img:'images/gallery-4.jpg',cls:'wide'},{img:'images/gallery-5.jpg',cls:''},{img:'images/gallery-6.jpg',cls:''},
+];
+const fmt=n=>'kr '+n.toLocaleString('no-NO');
+
+/* placeholder helper */
+function slot(img,label,extra){
+  return `<div class="imgslot ${extra||''}"><img src="${img}" alt="${label}" onerror="this.style.display='none'"><div class="ph"><span class="g">💚</span><small>${label}</small></div></div>`;
+}
+
+/* ── products + categories ── */
+let activeCat='All';
+function renderCats(){
+  const cats=['All',...[...new Set(PRODUCTS.map(p=>p.cat))]];
+  document.getElementById('cats').innerHTML=cats.map(c=>`<button class="${c===activeCat?'active':''}" onclick="setCat('${c}')">${c}</button>`).join('');
+}
+function setCat(c){activeCat=c;renderCats();renderProducts();}
+function renderProducts(){
+  const list=activeCat==='All'?PRODUCTS:PRODUCTS.filter(p=>p.cat===activeCat);
+  document.getElementById('products').innerHTML=list.map(p=>`
+    <div class="product">
+      <div style="position:relative">
+        ${p.tag?`<span class="tag">${p.tag}</span>`:''}
+        ${slot(p.img,p.name)}
+      </div>
+      <div class="body">
+        <h3>${p.name}</h3>
+        <div class="desc">${p.desc}</div>
+        <div class="row">
+          <div class="price">${fmt(p.price)} <small>incl. VAT</small></div>
+          <button class="add" data-id="${p.id}" onclick="addToCart('${p.id}',this)">Add to cart</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+/* ── gallery + lightbox ── */
+function renderGallery(){
+  document.getElementById('gallery').innerHTML=GALLERY.map((g,i)=>
+    `<div class="cell ${g.cls}" onclick="openLb(${i})">${slot(g.img,'Gallery '+(i+1))}</div>`).join('');
+}
+let lbIndex=0;
+function openLb(i){lbIndex=i;showLb();document.getElementById('lightbox').classList.add('open');}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');}
+function lbStep(d){lbIndex=(lbIndex+d+GALLERY.length)%GALLERY.length;showLb();}
+function showLb(){const img=document.getElementById('lbImg');img.src=GALLERY[lbIndex].img;img.onerror=()=>{img.alt='Image not uploaded yet';};}
+document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
+
+/* ── cart ── */
+let cart={}; // id -> qty
+function addToCart(id,btn){cart[id]=(cart[id]||0)+1;updateCart();if(btn){btn.classList.add('added');btn.textContent='Added ✓';setTimeout(()=>{btn.classList.remove('added');btn.textContent='Add to cart';},1100);}openCart();}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCart();}
+function removeItem(id){delete cart[id];updateCart();}
+function cartCount(){return Object.values(cart).reduce((a,b)=>a+b,0);}
+function subtotal(){return Object.entries(cart).reduce((s,[id,q])=>{const p=PRODUCTS.find(x=>x.id===id);return s+(p?p.price*q:0);},0);}
+function updateCart(){
+  document.getElementById('cartCount').textContent=cartCount();
+  const items=document.getElementById('cartItems'),foot=document.getElementById('cartFoot');
+  const ids=Object.keys(cart);
+  if(ids.length===0){items.innerHTML='<div class="empty">Your cart is empty.<br>Add a piece you love.</div>';foot.style.display='none';return;}
+  foot.style.display='block';
+  items.innerHTML=ids.map(id=>{const p=PRODUCTS.find(x=>x.id===id),q=cart[id];return `
+    <div class="citem">
+      ${slot(p.img,p.name,'th')}
+      <div class="info">
+        <div class="n">${p.name}</div><div class="p">${fmt(p.price)}</div>
+        <div class="qty"><button onclick="changeQty('${id}',-1)">−</button><span>${q}</span><button onclick="changeQty('${id}',1)">+</button></div>
+      </div>
+      <button class="rm" onclick="removeItem('${id}')">Remove</button>
+    </div>`;}).join('');
+  updateTotal();
+}
+function updateTotal(){
+  const ship=document.getElementById('ship-method');
+  const shipCost=ship?parseInt(ship.value||'0',10):0;
+  document.getElementById('cartTotal').textContent=fmt(subtotal()+shipCost);
+}
+function openCart(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('open');}
+function closeCart(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
+
+let checkoutStage=0;
+function checkout(){
+  if(cartCount()===0)return;
+  const fields=document.getElementById('checkoutFields'),btn=document.getElementById('checkoutBtn');
+  if(checkoutStage===0){fields.classList.add('show');btn.textContent='Place order';checkoutStage=1;
+    const sm=document.getElementById('ship-method');if(sm)sm.onchange=updateTotal;return;}
+  // validate
+  const req=['ship-name','ship-email','ship-addr','ship-zip','ship-city'];
+  for(const id of req){const el=document.getElementById(id);if(!el.value.trim()){el.focus();el.style.borderColor='#b4442e';return;}el.style.borderColor='';}
+  const email=document.getElementById('ship-email').value;
+  if(!/.+@.+\..+/.test(email)){document.getElementById('ship-email').focus();return;}
+  // "place" the order (stub — no real payment/backend)
+  const order={items:cart,subtotal:subtotal(),ship:document.getElementById('ship-method').value,
+    to:{name:document.getElementById('ship-name').value,email,addr:document.getElementById('ship-addr').value,
+        zip:document.getElementById('ship-zip').value,city:document.getElementById('ship-city').value}};
+  console.info('[smaragdify] order (stub):',order);
+  const ref='SMG-'+Date.now().toString(36).toUpperCase().slice(-6);
+  fields.classList.remove('show');btn.style.display='none';
+  const ok=document.getElementById('okMsg');ok.classList.add('show');
+  ok.innerHTML=`✓ Thank you, ${order.to.name.split(' ')[0]}!<br>Order <b>${ref}</b> received — a confirmation would be sent to ${email}.<br><small style="opacity:.85">Demo checkout — no payment was taken.</small>`;
+  cart={};document.getElementById('cartCount').textContent='0';
+}
+
+/* contact + init */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();const m=document.getElementById('contactMsg');
+  console.info('[smaragdify] contact:',{name:cname.value,email:cemail.value,msg:cmsg.value});
+  m.textContent='✓ Thank you — Smaragdify AS will be in touch shortly.';e.target.reset();
+  setTimeout(()=>m.textContent='',5000);
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+renderCats();renderProducts();renderGallery();updateCart();
+</script>
+</body>
+</html>
