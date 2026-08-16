@@ -170,7 +170,7 @@
       <a href="#shop" data-i18n="nav_shop">Shop</a><a href="#story" data-i18n="nav_story">Why natural</a><a href="#gallery" data-i18n="nav_gallery">Gallery</a><a href="#gifts" data-i18n="nav_gifts">Gifts</a><a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="navright">
-      <div class="langtoggle"><button id="lang-no" onclick="setLang('no')">NO</button><button id="lang-en" onclick="setLang('en')">EN</button></div>
+      <div class="langtoggle"><button id="lang-no" onclick="setLang('no')">NO</button><button id="lang-en" onclick="setLang('en')">EN</button><button id="lang-es" onclick="setLang('es')">ES</button></div>
       <button class="cartbtn" onclick="openCart()"><span data-i18n="cart">Cart</span> <span class="count" id="cartCount">0</span></button>
     </div>
   </nav>
@@ -300,6 +300,42 @@
 <script>
 /* ─────────── i18n ─────────── */
 const T={
+  es:{
+    brandsub:"Esmeraldas colombianas naturales", nav_shop:"Tienda", nav_story:"Por qué natural", nav_gallery:"Galería", nav_gifts:"Regalos", nav_contact:"Contacto",
+    cart:"Carrito", hero_eyebrow:"De las minas de Colombia · No sintética",
+    hero_title:'Esmeraldas con un verde <span>vivo</span>.',
+    hero_sub:"Esmeraldas colombianas naturales y transparentes — engastadas a mano en anillos, aretes y colgantes de plata de ley. Cada piedra se formó en la tierra, nunca en un laboratorio.",
+    hero_cta1:"Ver la colección →", hero_cta2:"Por qué esmeraldas naturales",
+    badge1:"Natural, extraída", badge2:"Plata de ley (925)", badge3:"Envío asegurado", badge3b:"Gratis",
+    strip:["✦ Piedras naturales de mina","✦ De origen ético en Colombia","✦ Engastes en plata de ley","✦ Certificado de autenticidad"],
+    shop_eyebrow:"La colección", shop_title:"Anillos, aretes y colgantes con esmeralda real",
+    shop_sub:"Cada pieza lleva una esmeralda colombiana genuina. Elige tu favorita — o encuentra un regalo para toda la vida.",
+    cat_all:"Todo", cat_Rings:"Anillos", cat_Earrings:"Aretes", cat_Pendants:"Colgantes", cat_Heritage:"Arte",
+    story_eyebrow:"Por qué natural", story_title:"Nacidas en la tierra, no en un laboratorio.",
+    story_p:"Las esmeraldas sintéticas se cultivan en fábricas en semanas. Las nuestras se formaron durante millones de años bajo los Andes colombianos — hogar de las esmeraldas más finas y verdes del mundo.",
+    story:[["Genuinamente natural","Piedras de mina — nunca cultivadas en laboratorio. Cada una con sus propias inclusiones y carácter."],
+           ["Origen colombiano","De las legendarias minas de Colombia, apreciadas en todo el mundo por su verde puro e intenso."],
+           ["Clara y brillante","Seleccionadas a mano por su claridad y color, y engastadas en plata de ley pulida."],
+           ["Certificada y asegurada","Cada pedido incluye certificado de autenticidad y envío totalmente asegurado."]],
+    gallery_eyebrow:"Galería", gallery_title:"Míralas de cerca", gallery_sub:"Toca cualquier imagen para verla en tamaño completo.",
+    gifts_eyebrow:"Hechas para regalar", gifts_title:"El regalo del verde", gifts_sub:"La esmeralda es la piedra de mayo y símbolo de amor y renovación — un regalo que se recuerda.",
+    gifts:[["💍","Para ella","Un anillo o unos aretes a los que volverá una y otra vez."],
+           ["🎁","Aniversarios","La piedra del 20.º y 35.º aniversario — y toda ocasión que merezca celebrarse."],
+           ["🌿","Solo porque sí","Envuelto para regalo, con una nota escrita a mano, entregado en la puerta."]],
+    gifts_cta:"Encontrar un regalo →",
+    contact_title:"¿Preguntas? Escríbenos.", contact_p:"¿Buscas algo específico — cierto quilataje, un engaste a medida o un regalo personalizado? Con gusto te ayudamos.",
+    c_email:"Correo", c_phone:"Teléfono", c_org:"Org.nr 000 000 000 · Noruega",
+    f_name:"Nombre", f_email:"Correo", f_msg:"Mensaje", f_send:"Enviar mensaje",
+    contact_ok:"✓ Gracias — Smaragdify AS se pondrá en contacto pronto.",
+    foot_copy:"Smaragdify AS — esmeraldas colombianas naturales, engastadas en plata de ley.", foot_back:"← Volver a Tronrud Sveis",
+    foot_demo:"✦ Borrador — precios, org.nr y datos de contacto por finalizar",
+    cart_title:"Tu carrito", cart_empty:"Tu carrito está vacío. Añade una pieza que te encante.", total:"Total",
+    add:"Añadir al carrito", added:"Añadido ✓", remove:"Quitar", incl:"IVA incl.",
+    checkout:"Pagar", place:"Realizar pedido",
+    ph_name:"Nombre completo", ph_email:"Correo", ph_addr:"Dirección", ph_zip:"Código postal", ph_city:"Ciudad",
+    ship_std:"Envío estándar — gratis (3–5 días)", ship_exp:"Envío exprés — kr 149 (1–2 días)",
+    order_ok:(nm,ref,em)=>`✓ ¡Gracias, ${nm}!<br>Pedido <b>${ref}</b> recibido — se enviaría una confirmación a ${em}.<br><small style="opacity:.85">Pago de demostración — no se realizó ningún cobro.</small>`,
+  },
   en:{
     brandsub:"Natural Colombian Emeralds", nav_shop:"Shop", nav_story:"Why natural", nav_gallery:"Gallery", nav_gifts:"Gifts", nav_contact:"Contact",
     cart:"Cart", hero_eyebrow:"From the mines of Colombia · Not synthetic",
@@ -378,33 +414,33 @@ const t=k=>T[lang][k];
 
 /* ─────────── DATA — real products mapped to real photos ─────────── */
 const PRODUCTS=[
-  {id:'r-sol1',cat:'Rings',img:'images/ring-solitaire-1.jpg',price:2490,tag:{en:'Bestseller',no:'Bestselger'},
-    name:{en:'Esmeralda Solitaire Ring',no:'Esmeralda solitærring'},
-    desc:{en:'A single clear Colombian emerald on a slim polished silver band.',no:'Én klar colombiansk smaragd på et slankt, polert sølvbånd.'}},
+  {id:'r-sol1',cat:'Rings',img:'images/ring-solitaire-1.jpg',price:2490,tag:{en:'Bestseller',no:'Bestselger',es:'Más vendido'},
+    name:{en:'Esmeralda Solitaire Ring',no:'Esmeralda solitærring',es:'Anillo Solitario Esmeralda'},
+    desc:{en:'A single clear Colombian emerald on a slim polished silver band.',no:'Én klar colombiansk smaragd på et slankt, polert sølvbånd.',es:'Una esmeralda colombiana transparente sobre una fina banda de plata pulida.'}},
   {id:'r-sol2',cat:'Rings',img:'images/ring-solitaire-2.jpg',price:2290,
-    name:{en:'Andes Solitaire, petite',no:'Andes solitær, liten'},
-    desc:{en:'A smaller emerald solitaire — understated and elegant.',no:'En mindre smaragd-solitær — diskret og elegant.'}},
-  {id:'r-dainty',cat:'Rings',img:'images/ring-dainty-1.jpg',price:1690,tag:{en:'Dainty',no:'Delikat'},
-    name:{en:'Verde Stacking Ring',no:'Verde stableringer'},
-    desc:{en:'Delicate emerald accents, made to stack or stand alone.',no:'Fine smaragd-detaljer, laget for å stables eller bæres alene.'}},
+    name:{en:'Andes Solitaire, petite',no:'Andes solitær, liten',es:'Solitario Andes, pequeño'},
+    desc:{en:'A smaller emerald solitaire — understated and elegant.',no:'En mindre smaragd-solitær — diskret og elegant.',es:'Un solitario de esmeralda más pequeño — discreto y elegante.'}},
+  {id:'r-dainty',cat:'Rings',img:'images/ring-dainty-1.jpg',price:1690,tag:{en:'Dainty',no:'Delikat',es:'Delicado'},
+    name:{en:'Verde Stacking Ring',no:'Verde stableringer',es:'Anillos Apilables Verde'},
+    desc:{en:'Delicate emerald accents, made to stack or stand alone.',no:'Fine smaragd-detaljer, laget for å stables eller bæres alene.',es:'Delicados detalles de esmeralda, para apilar o llevar solos.'}},
   {id:'r-halo',cat:'Rings',img:'images/ring-halo-1.jpg',price:3290,
-    name:{en:'Aurora Halo Ring',no:'Aurora glorie-ring'},
-    desc:{en:'An emerald centre framed by a halo of clear stones.',no:'En smaragd i midten omkranset av en glorie av klare stener.'}},
-  {id:'r-ecut',cat:'Rings',img:'images/ring-emeraldcut-1.jpg',price:2990,tag:{en:'New',no:'Nyhet'},
-    name:{en:'Bogotá Emerald-Cut Ring',no:'Bogotá smaragdslipt ring'},
-    desc:{en:'A modern bezel-set, emerald-cut stone with a clean silhouette.',no:'En moderne, smaragdslipt stein i fattet ramme med ren silhuett.'}},
-  {id:'e-drop',cat:'Earrings',img:'images/ear-drop-1.jpg',price:2790,tag:{en:'Bestseller',no:'Bestselger'},
-    name:{en:'Cascada Drop Earrings',no:'Cascada øredobber'},
-    desc:{en:'Kite-shaped silver drops with emerald and clear stones — they catch every light.',no:'Dråpeformede sølvøredobber med smaragd og klare stener — fanger alt lys.'}},
+    name:{en:'Aurora Halo Ring',no:'Aurora glorie-ring',es:'Anillo Halo Aurora'},
+    desc:{en:'An emerald centre framed by a halo of clear stones.',no:'En smaragd i midten omkranset av en glorie av klare stener.',es:'Una esmeralda central enmarcada por un halo de piedras claras.'}},
+  {id:'r-ecut',cat:'Rings',img:'images/ring-emeraldcut-1.jpg',price:2990,tag:{en:'New',no:'Nyhet',es:'Nuevo'},
+    name:{en:'Bogotá Emerald-Cut Ring',no:'Bogotá smaragdslipt ring',es:'Anillo Talla Esmeralda Bogotá'},
+    desc:{en:'A modern bezel-set, emerald-cut stone with a clean silhouette.',no:'En moderne, smaragdslipt stein i fattet ramme med ren silhuett.',es:'Piedra de talla esmeralda en engaste biselado moderno, de silueta limpia.'}},
+  {id:'e-drop',cat:'Earrings',img:'images/ear-drop-1.jpg',price:2790,tag:{en:'Bestseller',no:'Bestselger',es:'Más vendido'},
+    name:{en:'Cascada Drop Earrings',no:'Cascada øredobber',es:'Aretes Colgantes Cascada'},
+    desc:{en:'Kite-shaped silver drops with emerald and clear stones — they catch every light.',no:'Dråpeformede sølvøredobber med smaragd og klare stener — fanger alt lys.',es:'Aretes de plata en forma de cometa con esmeralda y piedras claras — captan toda la luz.'}},
   {id:'p-1',cat:'Pendants',img:'images/pendant-1.jpg',price:3190,
-    name:{en:'Selva Emerald Pendant',no:'Selva smaragdanheng'},
-    desc:{en:'A substantial emerald in a clean silver bezel, on a fine chain.',no:'En markant smaragd i ren sølvfatning, på en fin kjede.'}},
-  {id:'h-1',cat:'Heritage',img:'images/pendant-heritage-1.jpg',price:4490,tag:{en:'One of a kind',no:'Unikt'},
-    name:{en:'Muisca Guardian Pendant',no:'Muisca vokter-anheng'},
-    desc:{en:'A hand-crafted figurative silver pendant with set emeralds, inspired by pre-Columbian art.',no:'Et håndlaget figurativt sølvanheng med innfattede smaragder, inspirert av før-colombiansk kunst.'}},
-  {id:'h-2',cat:'Heritage',img:'images/pendant-heritage-2.jpg',price:4290,tag:{en:'One of a kind',no:'Unikt'},
-    name:{en:'Tumbaga Sun Pendant',no:'Tumbaga sol-anheng'},
-    desc:{en:'An ornate silver piece with emerald accents — a true collector\u2019s statement.',no:'Et forseggjort sølvsmykke med smaragd-detaljer — et ekte samleobjekt.'}},
+    name:{en:'Selva Emerald Pendant',no:'Selva smaragdanheng',es:'Colgante Esmeralda Selva'},
+    desc:{en:'A substantial emerald in a clean silver bezel, on a fine chain.',no:'En markant smaragd i ren sølvfatning, på en fin kjede.',es:'Una esmeralda destacada en engaste de plata, sobre una cadena fina.'}},
+  {id:'h-1',cat:'Heritage',img:'images/pendant-heritage-1.jpg',price:4490,tag:{en:'One of a kind',no:'Unikt',es:'Pieza única'},
+    name:{en:'Muisca Guardian Pendant',no:'Muisca vokter-anheng',es:'Colgante Guardián Muisca'},
+    desc:{en:'A hand-crafted figurative silver pendant with set emeralds, inspired by pre-Columbian art.',no:'Et håndlaget figurativt sølvanheng med innfattede smaragder, inspirert av før-colombiansk kunst.',es:'Colgante figurativo de plata hecho a mano con esmeraldas engastadas, inspirado en el arte precolombino.'}},
+  {id:'h-2',cat:'Heritage',img:'images/pendant-heritage-2.jpg',price:4290,tag:{en:'One of a kind',no:'Unikt',es:'Pieza única'},
+    name:{en:'Tumbaga Sun Pendant',no:'Tumbaga sol-anheng',es:'Colgante Sol Tumbaga'},
+    desc:{en:'An ornate silver piece with emerald accents — a true collector\u2019s statement.',no:'Et forseggjort sølvsmykke med smaragd-detaljer — et ekte samleobjekt.',es:'Una pieza de plata ornamentada con detalles de esmeralda — una verdadera joya de coleccionista.'}},
 ];
 const GALLERY=[
   {img:'images/ear-drop-2.jpg',cls:'tall'},{img:'images/ring-solitaire-1.jpg',cls:''},{img:'images/ring-halo-1.jpg',cls:''},
@@ -421,6 +457,7 @@ function applyI18n(){
   document.documentElement.lang=lang;
   document.getElementById('lang-no').classList.toggle('on',lang==='no');
   document.getElementById('lang-en').classList.toggle('on',lang==='en');
+  document.getElementById('lang-es').classList.toggle('on',lang==='es');
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');const v=t(k);if(typeof v==='string')el.textContent=v;});
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{el.innerHTML=t(el.getAttribute('data-i18n-html'));});
   document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=t(el.getAttribute('data-i18n-ph'));});
