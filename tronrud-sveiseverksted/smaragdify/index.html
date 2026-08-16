@@ -4,20 +4,18 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Smaragdify — Natural Colombian Emeralds on Silver</title>
-<meta name="description" content="Smaragdify AS — natural, clear green emeralds from the mines of Colombia, set in sterling silver rings and earrings. Not synthetic. Beautiful gifts and fine jewellery, delivered.">
+<meta name="description" content="Smaragdify AS — natural, clear green emeralds from the mines of Colombia, set in sterling silver rings, earrings and pendants. Not synthetic.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --emerald:#0b6b4f; --emerald-2:#0f8a63; --emerald-deep:#083d2e; --emerald-glow:#1fbf8f;
-    --silver:#c9ccce; --silver-2:#e7e9ea; --platinum:#f6f5f2;
+    --silver:#c9ccce; --platinum:#f6f5f2;
     --ink:#1a201d; --ink-soft:#46524c; --muted:#8a938e;
-    --cream:#faf8f3; --card:#ffffff; --line:#e8e6df;
-    --gold:#b9975b;
+    --cream:#faf8f3; --card:#ffffff; --line:#e8e6df; --gold:#b9975b;
     --shadow-sm:0 1px 3px rgba(11,45,34,.06),0 6px 18px rgba(11,45,34,.06);
-    --shadow-md:0 14px 44px rgba(11,45,34,.14);
-    --r:14px;
+    --shadow-md:0 14px 44px rgba(11,45,34,.14); --r:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -26,36 +24,34 @@
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   .wrap{width:min(1180px,92%);margin:0 auto}
-  .em{color:var(--emerald)}
   .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--emerald);font-weight:500}
 
-  /* image slot: shows photo when present, elegant placeholder until then */
-  .imgslot{position:relative;overflow:hidden;background:
-     linear-gradient(135deg,var(--emerald-deep),var(--emerald) 55%,var(--emerald-glow));}
+  .imgslot{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--emerald-deep),var(--emerald) 55%,var(--emerald-glow))}
   .imgslot img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
   .imgslot .ph{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:rgba(255,255,255,.85);padding:16px;gap:6px}
   .imgslot .ph .g{font-size:34px}
   .imgslot .ph small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
 
-  /* NAV */
   header{position:sticky;top:0;z-index:60;background:rgba(250,248,243,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px}
   .brand{display:flex;align-items:center;gap:12px}
   .brand .logo{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--emerald-glow),var(--emerald) 60%,var(--emerald-deep));box-shadow:inset 0 2px 6px rgba(255,255,255,.35),var(--shadow-sm)}
   .brand .nm{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;letter-spacing:.02em}
   .brand small{display:block;font-family:"Jost";font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:-4px}
-  .navlinks{display:flex;gap:30px;font-size:14px;color:var(--ink-soft);font-weight:400}
+  .navlinks{display:flex;gap:28px;font-size:14px;color:var(--ink-soft)}
   .navlinks a:hover{color:var(--emerald)}
-  @media(max-width:820px){.navlinks{display:none}}
+  @media(max-width:900px){.navlinks{display:none}}
+  .navright{display:flex;align-items:center;gap:12px}
+  .langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+  .langtoggle button{font:inherit;font-size:12.5px;font-weight:500;border:0;background:none;padding:7px 12px;cursor:pointer;color:var(--muted)}
+  .langtoggle button.on{background:var(--emerald);color:#fff}
   .cartbtn{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--emerald);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;border:0}
   .cartbtn:hover{background:var(--emerald-2)}
   .cartbtn .count{background:var(--gold);color:#231a06;font-size:11px;font-weight:600;min-width:20px;height:20px;border-radius:999px;display:grid;place-items:center;padding:0 5px}
 
-  /* HERO */
-  .hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:0;min-height:min(88vh,760px);background:var(--emerald-deep)}
+  .hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;min-height:min(88vh,760px);background:var(--emerald-deep)}
   @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}}
-  .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,90px);color:#f4f1e9;
-    background:radial-gradient(700px 500px at 15% 20%,rgba(31,191,143,.22),transparent 60%),var(--emerald-deep)}
+  .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,90px);color:#f4f1e9;background:radial-gradient(700px 500px at 15% 20%,rgba(31,191,143,.22),transparent 60%),var(--emerald-deep)}
   .hero-copy .eyebrow{color:var(--emerald-glow)}
   .hero-copy h1{font-size:clamp(40px,6vw,74px);margin:18px 0 0;color:#fbfaf6}
   .hero-copy h1 span{font-style:italic;color:var(--emerald-glow)}
@@ -64,24 +60,18 @@
   .hero-badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font-size:13px;color:#bcd8cc}
   .hero-badges b{display:block;font-family:"Cormorant Garamond",serif;font-size:22px;color:#fff;font-weight:600;line-height:1}
   .btn{display:inline-flex;align-items:center;gap:10px;font-family:"Jost";font-weight:500;font-size:15px;padding:15px 30px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:.18s}
-  .btn.primary{background:var(--emerald-glow);color:#04231a}
-  .btn.primary:hover{background:#37d3a2;transform:translateY(-2px)}
-  .btn.ghost{border-color:rgba(255,255,255,.4);color:#fff}
-  .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-  .btn.dark{background:var(--emerald);color:#fff}
-  .btn.dark:hover{background:var(--emerald-2)}
+  .btn.primary{background:var(--emerald-glow);color:#04231a}.btn.primary:hover{background:#37d3a2;transform:translateY(-2px)}
+  .btn.ghost{border-color:rgba(255,255,255,.4);color:#fff}.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn.dark{background:var(--emerald);color:#fff}.btn.dark:hover{background:var(--emerald-2)}
 
-  /* trust strip */
-  .strip{background:var(--emerald);color:#eafff6;font-size:13.5px;letter-spacing:.04em}
+  .strip{background:var(--emerald);color:#eafff6;font-size:13.5px}
   .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:34px;padding:14px 0;text-align:center}
-  .strip span{display:inline-flex;align-items:center;gap:8px}
 
   section{padding:clamp(56px,8vw,104px) 0}
   .sec-head{text-align:center;max-width:60ch;margin:0 auto 48px}
   .sec-head h2{font-size:clamp(30px,4.6vw,50px);margin-top:10px}
   .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:17px}
 
-  /* PRODUCTS */
   .cats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:38px}
   .cats button{font:inherit;font-size:14px;color:var(--ink-soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 20px;cursor:pointer;transition:.15s}
   .cats button:hover{border-color:var(--emerald)}
@@ -89,19 +79,17 @@
   .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px}
   .product{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.2s;display:flex;flex-direction:column}
   .product:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
-  .product .imgslot{aspect-ratio:1/1}
+  .product .imgslot{aspect-ratio:1/1;cursor:pointer}
   .product .tag{position:absolute;top:12px;left:12px;z-index:3;background:rgba(255,255,255,.92);color:var(--emerald);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
   .product .body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
   .product h3{font-size:24px}
   .product .desc{font-size:13.5px;color:var(--muted);flex:1}
   .product .row{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
-  .product .price{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;color:var(--ink)}
+  .product .price{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600}
   .product .price small{font-size:13px;color:var(--muted);font-family:"Jost"}
   .add{font:inherit;font-size:13.5px;font-weight:500;background:var(--emerald);color:#fff;border:0;border-radius:999px;padding:10px 18px;cursor:pointer;transition:.15s}
-  .add:hover{background:var(--emerald-2)}
-  .add.added{background:var(--gold);color:#231a06}
+  .add:hover{background:var(--emerald-2)}.add.added{background:var(--gold);color:#231a06}
 
-  /* STORY / why natural */
   .story{background:var(--platinum)}
   .story .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
   @media(max-width:880px){.story .split{grid-template-columns:1fr;gap:34px}}
@@ -113,15 +101,13 @@
   .story li b{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
   .story li p{color:var(--ink-soft);font-size:14.5px;margin-top:2px}
 
-  /* GALLERY */
-  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:14px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
-  .gallery .cell{aspect-ratio:1/1;border-radius:12px;cursor:pointer;transition:.2s}
+  .gallery .cell{aspect-ratio:1/1;border-radius:12px;cursor:pointer;transition:.2s;overflow:hidden}
   .gallery .cell:hover{transform:scale(1.02);box-shadow:var(--shadow-md)}
   .gallery .cell.wide{grid-column:span 2}
   .gallery .cell.tall{grid-row:span 2;aspect-ratio:auto}
   @media(max-width:900px){.gallery .cell.wide{grid-column:span 2}.gallery .cell.tall{grid-row:span 1;aspect-ratio:1/1}}
-  /* lightbox */
   .lightbox{position:fixed;inset:0;z-index:100;background:rgba(8,20,15,.92);display:none;align-items:center;justify-content:center;padding:24px}
   .lightbox.open{display:flex}
   .lightbox img{max-width:90vw;max-height:86vh;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,.5)}
@@ -129,24 +115,19 @@
   .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:34px;cursor:pointer;background:none;border:0;padding:20px}
   .lightbox .prev{left:8px}.lightbox .next{right:8px}
 
-  /* GIFTS band */
   .gifts{background:var(--emerald-deep);color:#eaf7f0}
   .gifts .sec-head h2{color:#fff}.gifts .sec-head p{color:#bcd8cc}
   .giftgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media(max-width:820px){.giftgrid{grid-template-columns:1fr}}
   .gift{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:30px 26px;text-align:center}
-  .gift .g{font-size:34px;margin-bottom:12px}
-  .gift h3{font-size:24px;color:#fff}
-  .gift p{color:#bcd8cc;font-size:14px;margin-top:8px}
+  .gift .g{font-size:34px;margin-bottom:12px}.gift h3{font-size:24px;color:#fff}.gift p{color:#bcd8cc;font-size:14px;margin-top:8px}
 
-  /* CONTACT */
   .contact .split{display:grid;grid-template-columns:1fr 1fr;gap:50px}
   @media(max-width:820px){.contact .split{grid-template-columns:1fr}}
   .contact-detail{display:grid;gap:18px;margin-top:24px}
   .cd{display:flex;gap:14px;align-items:flex-start}
   .cd .i{flex:none;width:42px;height:42px;border-radius:10px;background:var(--emerald);color:#fff;display:grid;place-items:center;font-size:18px}
-  .cd b{font-family:"Cormorant Garamond",serif;font-size:19px}
-  .cd p{color:var(--ink-soft);font-size:14.5px}
+  .cd b{font-family:"Cormorant Garamond",serif;font-size:19px}.cd p{color:var(--ink-soft);font-size:14.5px}
   .form{display:grid;gap:14px}
   .form label{font-size:13px;color:var(--ink-soft);display:block;margin-bottom:6px}
   .form input,.form textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
@@ -155,147 +136,125 @@
   .form-msg{font-size:14px;color:var(--emerald);min-height:20px;font-weight:500}
 
   footer{background:var(--emerald-deep);color:#9dc3b4;padding:44px 0;text-align:center;font-size:13.5px}
-  footer .brand{justify-content:center;margin-bottom:14px}
-  footer .brand .nm{color:#fff}
+  footer .brand{justify-content:center;margin-bottom:14px}footer .brand .nm{color:#fff}
   footer a.back{color:var(--emerald-glow)}
   .demo{display:inline-block;margin-top:14px;font-size:11px;color:var(--emerald-glow);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px}
 
-  /* CART DRAWER */
   .overlay{position:fixed;inset:0;background:rgba(8,20,15,.4);z-index:80;opacity:0;pointer-events:none;transition:.25s}
   .overlay.open{opacity:1;pointer-events:auto}
   .drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--cream);z-index:90;transform:translateX(100%);transition:.3s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2)}
   .drawer.open{transform:none}
   .drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
-  .drawer .dh h3{font-size:24px}
-  .drawer .dh .x{font-size:26px;background:none;border:0;cursor:pointer;color:var(--ink-soft)}
+  .drawer .dh h3{font-size:24px}.drawer .dh .x{font-size:26px;background:none;border:0;cursor:pointer;color:var(--ink-soft)}
   .drawer .items{flex:1;overflow-y:auto;padding:12px 22px}
   .citem{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
   .citem .th{width:60px;height:60px;border-radius:8px;flex:none}
-  .citem .info{flex:1;min-width:0}
-  .citem .info .n{font-weight:500;font-size:14px}
-  .citem .info .p{color:var(--muted);font-size:13px}
+  .citem .info{flex:1;min-width:0}.citem .info .n{font-weight:500;font-size:14px}.citem .info .p{color:var(--muted);font-size:13px}
   .citem .qty{display:flex;align-items:center;gap:8px;margin-top:6px}
   .citem .qty button{width:24px;height:24px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer;font-size:14px}
-  .citem .rm{background:none;border:0;color:var(--muted);cursor:pointer;font-size:12px;align-self:flex-start}
-  .citem .rm:hover{color:#b4442e}
+  .citem .rm{background:none;border:0;color:var(--muted);cursor:pointer;font-size:12px;align-self:flex-start}.citem .rm:hover{color:#b4442e}
   .empty{text-align:center;color:var(--muted);padding:50px 20px}
   .drawer .foot{border-top:1px solid var(--line);padding:20px 22px}
   .drawer .tot{display:flex;justify-content:space-between;font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;margin-bottom:14px}
-  .checkout-fields{display:none;gap:10px;margin-bottom:14px}
-  .checkout-fields.show{display:grid}
+  .checkout-fields{display:none;gap:10px;margin-bottom:14px}.checkout-fields.show{display:grid}
   .checkout-fields input,.checkout-fields select{width:100%;font:inherit;font-size:13.5px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:#fff}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .ok-msg{background:var(--emerald);color:#fff;border-radius:10px;padding:16px;text-align:center;font-size:14px;display:none}
-  .ok-msg.show{display:block}
+  .ok-msg{background:var(--emerald);color:#fff;border-radius:10px;padding:16px;text-align:center;font-size:14px;display:none}.ok-msg.show{display:block}
 </style>
 </head>
 <body>
 <header>
   <nav class="wrap">
-    <a class="brand" href="#top"><span class="logo"></span><span><span class="nm">Smaragdify</span><small>Natural Colombian Emeralds</small></span></a>
+    <a class="brand" href="#top"><span class="logo"></span><span><span class="nm">Smaragdify</span><small data-i18n="brandsub">Natural Colombian Emeralds</small></span></a>
     <div class="navlinks">
-      <a href="#shop">Shop</a><a href="#story">Why natural</a><a href="#gallery">Gallery</a><a href="#gifts">Gifts</a><a href="#contact">Contact</a>
+      <a href="#shop" data-i18n="nav_shop">Shop</a><a href="#story" data-i18n="nav_story">Why natural</a><a href="#gallery" data-i18n="nav_gallery">Gallery</a><a href="#gifts" data-i18n="nav_gifts">Gifts</a><a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
-    <button class="cartbtn" onclick="openCart()">Cart <span class="count" id="cartCount">0</span></button>
+    <div class="navright">
+      <div class="langtoggle"><button id="lang-no" onclick="setLang('no')">NO</button><button id="lang-en" onclick="setLang('en')">EN</button></div>
+      <button class="cartbtn" onclick="openCart()"><span data-i18n="cart">Cart</span> <span class="count" id="cartCount">0</span></button>
+    </div>
   </nav>
 </header>
 
 <a id="top"></a>
-<!-- HERO -->
 <section class="hero">
   <div class="hero-copy">
-    <span class="eyebrow">From the mines of Colombia · Not synthetic</span>
-    <h1>Emeralds that hold a <span>living</span> green.</h1>
-    <p>Natural, clear Colombian emeralds — hand-set in sterling silver rings and earrings. Each stone is earth-formed, never lab-made. A quiet luxury you can wear every day, or give to someone who deserves it.</p>
-    <div class="cta-row" style="display:flex;gap:14px;flex-wrap:wrap">
-      <a href="#shop" class="btn primary">Shop the collection →</a>
-      <a href="#story" class="btn ghost">Why natural emeralds</a>
+    <span class="eyebrow" data-i18n="hero_eyebrow">From the mines of Colombia · Not synthetic</span>
+    <h1 data-i18n-html="hero_title">Emeralds that hold a <span>living</span> green.</h1>
+    <p data-i18n="hero_sub">Natural, clear Colombian emeralds — hand-set in sterling silver rings, earrings and pendants. Each stone is earth-formed, never lab-made.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="#shop" class="btn primary" data-i18n="hero_cta1">Shop the collection →</a>
+      <a href="#story" class="btn ghost" data-i18n="hero_cta2">Why natural emeralds</a>
     </div>
     <div class="hero-badges">
-      <div><b>100%</b>Natural, mined</div>
-      <div><b>925</b>Sterling silver</div>
-      <div><b>Free</b>Insured delivery</div>
+      <div><b>100%</b><span data-i18n="badge1">Natural, mined</span></div>
+      <div><b>925</b><span data-i18n="badge2">Sterling silver</span></div>
+      <div><b data-i18n="badge3b">Free</b><span data-i18n="badge3">Insured delivery</span></div>
     </div>
   </div>
   <div class="imgslot hero-slot" data-slot="hero">
-    <img src="images/hero.jpg" alt="Colombian emerald ring in sterling silver" onerror="this.style.display='none'">
-    <div class="ph"><span class="g">💚</span><span class="serif" style="font-size:28px;color:#fff">Your hero image</span><small>images/hero.jpg</small></div>
+    <img src="images/ear-drop-1.jpg" alt="Colombian emerald drop earrings in sterling silver" onerror="this.style.display='none'">
+    <div class="ph"><span class="g">💚</span><small>images/ear-drop-1.jpg</small></div>
   </div>
 </section>
 
-<div class="strip"><div class="wrap">
-  <span>✦ Natural, earth-mined stones</span><span>✦ Ethically sourced from Colombia</span><span>✦ Sterling silver settings</span><span>✦ Certificate of authenticity</span>
-</div></div>
+<div class="strip"><div class="wrap" id="stripWrap"></div></div>
 
-<!-- SHOP -->
 <section id="shop">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">The Collection</span><h2>Rings &amp; earrings, set with real emerald</h2><p>Every piece features a genuine Colombian emerald. Choose your favourite — or find a gift that lasts a lifetime.</p></div>
+    <div class="sec-head"><span class="eyebrow" data-i18n="shop_eyebrow">The Collection</span><h2 data-i18n="shop_title">Rings, earrings &amp; pendants, set with real emerald</h2><p data-i18n="shop_sub">Every piece features a genuine Colombian emerald. Choose your favourite — or find a gift that lasts a lifetime.</p></div>
     <div class="cats" id="cats"></div>
     <div class="products" id="products"></div>
   </div>
 </section>
 
-<!-- STORY -->
 <section id="story" class="story">
   <div class="wrap split">
     <div class="imgslot" data-slot="story">
-      <img src="images/story.jpg" alt="Raw emerald from a Colombian mine" onerror="this.style.display='none'">
-      <div class="ph"><span class="g">⛏️</span><span class="serif" style="font-size:24px;color:#fff">Mine / craft image</span><small>images/story.jpg</small></div>
+      <img src="images/ring-emeraldcut-1.jpg" alt="Natural Colombian emerald, emerald-cut, in silver" onerror="this.style.display='none'">
+      <div class="ph"><span class="g">💚</span><small>images/ring-emeraldcut-1.jpg</small></div>
     </div>
     <div>
-      <span class="eyebrow">Why natural</span>
-      <h2>Born in the earth, not a laboratory.</h2>
-      <p style="color:var(--ink-soft);margin-top:14px;font-size:16px">Synthetic emeralds are grown in factories in weeks. Ours were formed over millions of years beneath the Colombian Andes — home to the finest, greenest emeralds on earth. That difference is something you can see, and something you can feel.</p>
-      <ul>
-        <li><span class="c">✓</span><div><b>Genuinely natural</b><p>Earth-mined stones — never lab-grown or synthetic. Each carries its own unique inclusions and character.</p></div></li>
-        <li><span class="c">✓</span><div><b>Colombian origin</b><p>From the legendary mines of Colombia, prized worldwide for their pure, vivid green.</p></div></li>
-        <li><span class="c">✓</span><div><b>Clear and brilliant</b><p>Hand-selected for clarity and colour, then set in polished sterling silver.</p></div></li>
-        <li><span class="c">✓</span><div><b>Certified &amp; insured</b><p>Every order includes a certificate of authenticity and fully insured delivery.</p></div></li>
-      </ul>
+      <span class="eyebrow" data-i18n="story_eyebrow">Why natural</span>
+      <h2 data-i18n="story_title">Born in the earth, not a laboratory.</h2>
+      <p style="color:var(--ink-soft);margin-top:14px;font-size:16px" data-i18n="story_p">Synthetic emeralds are grown in factories in weeks. Ours were formed over millions of years beneath the Colombian Andes.</p>
+      <ul id="storyList"></ul>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Gallery</span><h2>Look closer</h2><p>Tap any image to view it full-size.</p></div>
+    <div class="sec-head"><span class="eyebrow" data-i18n="gallery_eyebrow">Gallery</span><h2 data-i18n="gallery_title">Look closer</h2><p data-i18n="gallery_sub">Tap any image to view it full-size.</p></div>
     <div class="gallery" id="gallery"></div>
   </div>
 </section>
 
-<!-- GIFTS -->
 <section id="gifts" class="gifts">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Made to be given</span><h2>The gift of green</h2><p>An emerald is May's birthstone and a symbol of love and renewal — a present that's remembered.</p></div>
-    <div class="giftgrid">
-      <div class="gift"><div class="g">💍</div><h3>For her</h3><p>A ring or pair of earrings she'll reach for again and again.</p></div>
-      <div class="gift"><div class="g">🎁</div><h3>Anniversaries</h3><p>The 20th &amp; 35th anniversary stone — and any occasion worth marking.</p></div>
-      <div class="gift"><div class="g">🌿</div><h3>Just because</h3><p>Gift-wrapped, with a handwritten note, delivered to the door.</p></div>
-    </div>
-    <div style="text-align:center;margin-top:36px"><a href="#shop" class="btn primary">Find a gift →</a></div>
+    <div class="sec-head"><span class="eyebrow" data-i18n="gifts_eyebrow">Made to be given</span><h2 data-i18n="gifts_title">The gift of green</h2><p data-i18n="gifts_sub">An emerald is May's birthstone and a symbol of love and renewal.</p></div>
+    <div class="giftgrid" id="giftGrid"></div>
+    <div style="text-align:center;margin-top:36px"><a href="#shop" class="btn primary" data-i18n="gifts_cta">Find a gift →</a></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="wrap split">
     <div>
       <span class="eyebrow">Smaragdify AS</span>
-      <h2 style="font-size:clamp(28px,4vw,44px);margin-top:8px">Questions? Reach out.</h2>
-      <p style="color:var(--ink-soft);margin-top:12px">Looking for something specific — a certain carat, a custom setting, or a bespoke gift? We're happy to help.</p>
+      <h2 style="font-size:clamp(28px,4vw,44px);margin-top:8px" data-i18n="contact_title">Questions? Reach out.</h2>
+      <p style="color:var(--ink-soft);margin-top:12px" data-i18n="contact_p">Looking for something specific — a certain carat, a custom setting, or a bespoke gift? We're happy to help.</p>
       <div class="contact-detail">
-        <div class="cd"><span class="i">✉️</span><div><b>Email</b><p><a href="mailto:hello@smaragdify.no">hello@smaragdify.no</a></p></div></div>
-        <div class="cd"><span class="i">📞</span><div><b>Phone</b><p><a href="tel:+4700000000">+47 000 00 000</a></p></div></div>
-        <div class="cd"><span class="i">🏢</span><div><b>Smaragdify AS</b><p>Org.nr 000 000 000 · Norway</p></div></div>
+        <div class="cd"><span class="i">✉️</span><div><b data-i18n="c_email">Email</b><p><a href="mailto:hello@smaragdify.no">hello@smaragdify.no</a></p></div></div>
+        <div class="cd"><span class="i">📞</span><div><b data-i18n="c_phone">Phone</b><p><a href="tel:+4700000000">+47 000 00 000</a></p></div></div>
+        <div class="cd"><span class="i">🏢</span><div><b>Smaragdify AS</b><p data-i18n="c_org">Org.nr 000 000 000 · Norway</p></div></div>
       </div>
     </div>
     <form class="form" id="contactForm">
-      <div><label for="cname">Name</label><input id="cname" required placeholder="Your name"></div>
-      <div><label for="cemail">Email</label><input id="cemail" type="email" required placeholder="you@email.com"></div>
-      <div><label for="cmsg">Message</label><textarea id="cmsg" required placeholder="How can we help?"></textarea></div>
-      <button type="submit" class="btn dark">Send message</button>
+      <div><label for="cname" data-i18n="f_name">Name</label><input id="cname" required></div>
+      <div><label for="cemail" data-i18n="f_email">Email</label><input id="cemail" type="email" required></div>
+      <div><label for="cmsg" data-i18n="f_msg">Message</label><textarea id="cmsg" required></textarea></div>
+      <button type="submit" class="btn dark" data-i18n="f_send">Send message</button>
       <div class="form-msg" id="contactMsg" aria-live="polite"></div>
     </form>
   </div>
@@ -304,35 +263,33 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><span class="logo"></span><span class="nm">Smaragdify</span></a>
-    <p>© <span id="yr"></span> Smaragdify AS — natural Colombian emeralds, set in sterling silver.</p>
-    <p style="margin-top:8px"><a class="back" href="../index.html">← Back to Tronrud Sveis</a></p>
-    <span class="demo">✦ Draft — product photos, prices, org.nr and contact details to be finalised</span>
+    <p data-i18n="foot_copy">© <span id="yr"></span> Smaragdify AS — natural Colombian emeralds, set in sterling silver.</p>
+    <p style="margin-top:8px"><a class="back" href="../index.html" data-i18n="foot_back">← Back to Tronrud Sveis</a></p>
+    <span class="demo" data-i18n="foot_demo">✦ Draft — prices, org.nr and contact details to be finalised</span>
   </div>
 </footer>
 
-<!-- CART DRAWER -->
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
 <aside class="drawer" id="drawer" aria-label="Shopping cart">
-  <div class="dh"><h3>Your cart</h3><button class="x" onclick="closeCart()" aria-label="Close">×</button></div>
+  <div class="dh"><h3 data-i18n="cart_title">Your cart</h3><button class="x" onclick="closeCart()" aria-label="Close">×</button></div>
   <div class="items" id="cartItems"></div>
   <div class="foot" id="cartFoot" style="display:none">
-    <div class="tot"><span>Total</span><span id="cartTotal">kr 0</span></div>
+    <div class="tot"><span data-i18n="total">Total</span><span id="cartTotal">kr 0</span></div>
     <div class="checkout-fields" id="checkoutFields">
-      <input id="ship-name" placeholder="Full name" required>
-      <input id="ship-email" type="email" placeholder="Email" required>
-      <input id="ship-addr" placeholder="Street address" required>
-      <div class="row2"><input id="ship-zip" placeholder="Postcode" required><input id="ship-city" placeholder="City" required></div>
+      <input id="ship-name" data-i18n-ph="ph_name" placeholder="Full name" required>
+      <input id="ship-email" type="email" data-i18n-ph="ph_email" placeholder="Email" required>
+      <input id="ship-addr" data-i18n-ph="ph_addr" placeholder="Street address" required>
+      <div class="row2"><input id="ship-zip" data-i18n-ph="ph_zip" placeholder="Postcode" required><input id="ship-city" data-i18n-ph="ph_city" placeholder="City" required></div>
       <select id="ship-method">
-        <option value="0">Standard delivery — free (3–5 days)</option>
-        <option value="149">Express delivery — kr 149 (1–2 days)</option>
+        <option value="0" data-i18n="ship_std">Standard delivery — free (3–5 days)</option>
+        <option value="149" data-i18n="ship_exp">Express delivery — kr 149 (1–2 days)</option>
       </select>
     </div>
     <div class="ok-msg" id="okMsg"></div>
-    <button class="btn dark" style="width:100%;justify-content:center" id="checkoutBtn" onclick="checkout()">Checkout</button>
+    <button class="btn dark" style="width:100%;justify-content:center" id="checkoutBtn" onclick="checkout()" data-i18n="checkout">Checkout</button>
   </div>
 </aside>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="x" onclick="closeLb()" aria-label="Close">×</button>
   <button class="nav prev" onclick="lbStep(-1)" aria-label="Previous">‹</button>
@@ -341,36 +298,149 @@
 </div>
 
 <script>
-/* ─────────── DATA — swap image paths / prices here ───────────
-   Drop your photos into an /images folder next to this file, e.g.
-   images/ring-esmeralda.jpg — they appear automatically. Until then,
-   an elegant green placeholder shows in each slot. */
+/* ─────────── i18n ─────────── */
+const T={
+  en:{
+    brandsub:"Natural Colombian Emeralds", nav_shop:"Shop", nav_story:"Why natural", nav_gallery:"Gallery", nav_gifts:"Gifts", nav_contact:"Contact",
+    cart:"Cart", hero_eyebrow:"From the mines of Colombia · Not synthetic",
+    hero_title:'Emeralds that hold a <span>living</span> green.',
+    hero_sub:"Natural, clear Colombian emeralds — hand-set in sterling silver rings, earrings and pendants. Each stone is earth-formed, never lab-made.",
+    hero_cta1:"Shop the collection →", hero_cta2:"Why natural emeralds",
+    badge1:"Natural, mined", badge2:"Sterling silver", badge3:"Insured delivery", badge3b:"Free",
+    strip:["✦ Natural, earth-mined stones","✦ Ethically sourced from Colombia","✦ Sterling silver settings","✦ Certificate of authenticity"],
+    shop_eyebrow:"The Collection", shop_title:"Rings, earrings & pendants, set with real emerald",
+    shop_sub:"Every piece features a genuine Colombian emerald. Choose your favourite — or find a gift that lasts a lifetime.",
+    cat_all:"All", cat_Rings:"Rings", cat_Earrings:"Earrings", cat_Pendants:"Pendants", cat_Heritage:"Heritage",
+    story_eyebrow:"Why natural", story_title:"Born in the earth, not a laboratory.",
+    story_p:"Synthetic emeralds are grown in factories in weeks. Ours were formed over millions of years beneath the Colombian Andes — home to the finest, greenest emeralds on earth.",
+    story:[["Genuinely natural","Earth-mined stones — never lab-grown. Each carries its own unique inclusions and character."],
+           ["Colombian origin","From the legendary mines of Colombia, prized worldwide for their pure, vivid green."],
+           ["Clear and brilliant","Hand-selected for clarity and colour, then set in polished sterling silver."],
+           ["Certified & insured","Every order includes a certificate of authenticity and fully insured delivery."]],
+    gallery_eyebrow:"Gallery", gallery_title:"Look closer", gallery_sub:"Tap any image to view it full-size.",
+    gifts_eyebrow:"Made to be given", gifts_title:"The gift of green", gifts_sub:"An emerald is May's birthstone and a symbol of love and renewal — a present that's remembered.",
+    gifts:[["💍","For her","A ring or pair of earrings she'll reach for again and again."],
+           ["🎁","Anniversaries","The 20th & 35th anniversary stone — and any occasion worth marking."],
+           ["🌿","Just because","Gift-wrapped, with a handwritten note, delivered to the door."]],
+    gifts_cta:"Find a gift →",
+    contact_title:"Questions? Reach out.", contact_p:"Looking for something specific — a certain carat, a custom setting, or a bespoke gift? We're happy to help.",
+    c_email:"Email", c_phone:"Phone", c_org:"Org.nr 000 000 000 · Norway",
+    f_name:"Name", f_email:"Email", f_msg:"Message", f_send:"Send message",
+    contact_ok:"✓ Thank you — Smaragdify AS will be in touch shortly.",
+    foot_copy:"Smaragdify AS — natural Colombian emeralds, set in sterling silver.", foot_back:"← Back to Tronrud Sveis",
+    foot_demo:"✦ Draft — prices, org.nr and contact details to be finalised",
+    cart_title:"Your cart", cart_empty:"Your cart is empty. Add a piece you love.", total:"Total",
+    add:"Add to cart", added:"Added ✓", remove:"Remove", incl:"incl. VAT",
+    checkout:"Checkout", place:"Place order",
+    ph_name:"Full name", ph_email:"Email", ph_addr:"Street address", ph_zip:"Postcode", ph_city:"City",
+    ship_std:"Standard delivery — free (3–5 days)", ship_exp:"Express delivery — kr 149 (1–2 days)",
+    order_ok:(nm,ref,em)=>`✓ Thank you, ${nm}!<br>Order <b>${ref}</b> received — a confirmation would be sent to ${em}.<br><small style="opacity:.85">Demo checkout — no payment was taken.</small>`,
+  },
+  no:{
+    brandsub:"Naturlige colombianske smaragder", nav_shop:"Butikk", nav_story:"Hvorfor naturlig", nav_gallery:"Galleri", nav_gifts:"Gaver", nav_contact:"Kontakt",
+    cart:"Handlekurv", hero_eyebrow:"Fra gruvene i Colombia · Ikke syntetisk",
+    hero_title:'Smaragder med en <span>levende</span> grønnfarge.',
+    hero_sub:"Naturlige, klare colombianske smaragder — håndfattet i rings, øredobber og anheng av ekte sølv. Hver stein er formet i jorden, aldri laget på lab.",
+    hero_cta1:"Se kolleksjonen →", hero_cta2:"Hvorfor naturlige smaragder",
+    badge1:"Naturlig, utvunnet", badge2:"Ekte sølv (925)", badge3:"Forsikret levering", badge3b:"Gratis",
+    strip:["✦ Naturlige, jordutvunne stener","✦ Etisk hentet fra Colombia","✦ Fatninger i ekte sølv","✦ Ekthetssertifikat"],
+    shop_eyebrow:"Kolleksjonen", shop_title:"Ringer, øredobber og anheng med ekte smaragd",
+    shop_sub:"Hvert smykke har en ekte colombiansk smaragd. Velg din favoritt — eller finn en gave som varer livet ut.",
+    cat_all:"Alle", cat_Rings:"Ringer", cat_Earrings:"Øredobber", cat_Pendants:"Anheng", cat_Heritage:"Kunstsmykker",
+    story_eyebrow:"Hvorfor naturlig", story_title:"Født i jorden, ikke på et laboratorium.",
+    story_p:"Syntetiske smaragder dyrkes på fabrikk på noen uker. Våre ble formet gjennom millioner av år under de colombianske Andesfjellene — hjemmet til verdens fineste og grønneste smaragder.",
+    story:[["Ekte naturlig","Jordutvunne stener — aldri labdyrket. Hver har sine egne unike inneslutninger og særpreg."],
+           ["Colombiansk opprinnelse","Fra de legendariske gruvene i Colombia, verdenskjent for sin rene, dype grønnfarge."],
+           ["Klar og brilliant","Håndplukket for klarhet og farge, deretter fattet i polert ekte sølv."],
+           ["Sertifisert og forsikret","Hver bestilling inkluderer ekthetssertifikat og fullt forsikret levering."]],
+    gallery_eyebrow:"Galleri", gallery_title:"Se nærmere", gallery_sub:"Trykk på et bilde for å se det i full størrelse.",
+    gifts_eyebrow:"Skapt for å gis bort", gifts_title:"Gaven i grønt", gifts_sub:"Smaragden er mai måneds fødselsstein og et symbol på kjærlighet og fornyelse — en gave som huskes.",
+    gifts:[["💍","Til henne","En ring eller et par øredobber hun griper til igjen og igjen."],
+           ["🎁","Jubileer","Steinen for 20- og 35-årsjubileet — og enhver anledning verdt å feire."],
+           ["🌿","Bare fordi","Gaveinnpakket, med håndskrevet hilsen, levert på døra."]],
+    gifts_cta:"Finn en gave →",
+    contact_title:"Spørsmål? Ta kontakt.", contact_p:"Ute etter noe spesielt — en bestemt karat, en spesialfatning eller en skreddersydd gave? Vi hjelper deg gjerne.",
+    c_email:"E-post", c_phone:"Telefon", c_org:"Org.nr 000 000 000 · Norge",
+    f_name:"Navn", f_email:"E-post", f_msg:"Melding", f_send:"Send melding",
+    contact_ok:"✓ Takk — Smaragdify AS tar kontakt snart.",
+    foot_copy:"Smaragdify AS — naturlige colombianske smaragder, fattet i ekte sølv.", foot_back:"← Tilbake til Tronrud Sveis",
+    foot_demo:"✦ Utkast — priser, org.nr og kontaktinfo fylles inn senere",
+    cart_title:"Handlekurven din", cart_empty:"Handlekurven er tom. Legg til et smykke du liker.", total:"Totalt",
+    add:"Legg i kurv", added:"Lagt til ✓", remove:"Fjern", incl:"inkl. mva",
+    checkout:"Til kassen", place:"Fullfør bestilling",
+    ph_name:"Fullt navn", ph_email:"E-post", ph_addr:"Gateadresse", ph_zip:"Postnr", ph_city:"Sted",
+    ship_std:"Standard levering — gratis (3–5 dager)", ship_exp:"Ekspresslevering — kr 149 (1–2 dager)",
+    order_ok:(nm,ref,em)=>`✓ Takk, ${nm}!<br>Bestilling <b>${ref}</b> mottatt — en bekreftelse ville blitt sendt til ${em}.<br><small style="opacity:.85">Demo-kasse — ingen betaling ble trukket.</small>`,
+  }
+};
+let lang = (()=>{ try{return localStorage.getItem('smg-lang')||(navigator.language||'').toLowerCase().startsWith('nb')||( navigator.language||'').toLowerCase().startsWith('no')?'no':'en';}catch(e){return 'en';} })();
+const t=k=>T[lang][k];
+
+/* ─────────── DATA — real products mapped to real photos ─────────── */
 const PRODUCTS=[
-  {id:'r1',cat:'Rings',name:'Esmeralda Solitaire Ring',desc:'A single clear Colombian emerald on a slim polished silver band.',price:2490,img:'images/ring-1.jpg',tag:'Bestseller'},
-  {id:'r2',cat:'Rings',name:'Andes Halo Ring',desc:'Emerald centre framed by a silver halo — brilliant and bold.',price:3290,img:'images/ring-2.jpg'},
-  {id:'r3',cat:'Rings',name:'Verde Stacking Ring',desc:'A delicate emerald accent, made to stack or stand alone.',price:1690,img:'images/ring-3.jpg'},
-  {id:'e1',cat:'Earrings',name:'Rocío Emerald Studs',desc:'Everyday elegance — natural emerald studs in sterling silver.',price:1890,img:'images/ear-1.jpg',tag:'New'},
-  {id:'e2',cat:'Earrings',name:'Cascada Drop Earrings',desc:'Emeralds that catch the light with every movement.',price:2790,img:'images/ear-2.jpg'},
-  {id:'e3',cat:'Earrings',name:'Bogotá Huggie Hoops',desc:'Small silver hoops set with a line of green emerald.',price:2190,img:'images/ear-3.jpg'},
-  {id:'g1',cat:'Gift sets',name:'Esmeralda Gift Set',desc:'Matching ring & studs, gift-boxed with a handwritten note.',price:3990,img:'images/set-1.jpg',tag:'Gift'},
-  {id:'g2',cat:'Gift sets',name:'May Birthstone Duo',desc:'Two pieces for the emerald-born — beautifully presented.',price:3490,img:'images/set-2.jpg'},
+  {id:'r-sol1',cat:'Rings',img:'images/ring-solitaire-1.jpg',price:2490,tag:{en:'Bestseller',no:'Bestselger'},
+    name:{en:'Esmeralda Solitaire Ring',no:'Esmeralda solitærring'},
+    desc:{en:'A single clear Colombian emerald on a slim polished silver band.',no:'Én klar colombiansk smaragd på et slankt, polert sølvbånd.'}},
+  {id:'r-sol2',cat:'Rings',img:'images/ring-solitaire-2.jpg',price:2290,
+    name:{en:'Andes Solitaire, petite',no:'Andes solitær, liten'},
+    desc:{en:'A smaller emerald solitaire — understated and elegant.',no:'En mindre smaragd-solitær — diskret og elegant.'}},
+  {id:'r-dainty',cat:'Rings',img:'images/ring-dainty-1.jpg',price:1690,tag:{en:'Dainty',no:'Delikat'},
+    name:{en:'Verde Stacking Ring',no:'Verde stableringer'},
+    desc:{en:'Delicate emerald accents, made to stack or stand alone.',no:'Fine smaragd-detaljer, laget for å stables eller bæres alene.'}},
+  {id:'r-halo',cat:'Rings',img:'images/ring-halo-1.jpg',price:3290,
+    name:{en:'Aurora Halo Ring',no:'Aurora glorie-ring'},
+    desc:{en:'An emerald centre framed by a halo of clear stones.',no:'En smaragd i midten omkranset av en glorie av klare stener.'}},
+  {id:'r-ecut',cat:'Rings',img:'images/ring-emeraldcut-1.jpg',price:2990,tag:{en:'New',no:'Nyhet'},
+    name:{en:'Bogotá Emerald-Cut Ring',no:'Bogotá smaragdslipt ring'},
+    desc:{en:'A modern bezel-set, emerald-cut stone with a clean silhouette.',no:'En moderne, smaragdslipt stein i fattet ramme med ren silhuett.'}},
+  {id:'e-drop',cat:'Earrings',img:'images/ear-drop-1.jpg',price:2790,tag:{en:'Bestseller',no:'Bestselger'},
+    name:{en:'Cascada Drop Earrings',no:'Cascada øredobber'},
+    desc:{en:'Kite-shaped silver drops with emerald and clear stones — they catch every light.',no:'Dråpeformede sølvøredobber med smaragd og klare stener — fanger alt lys.'}},
+  {id:'p-1',cat:'Pendants',img:'images/pendant-1.jpg',price:3190,
+    name:{en:'Selva Emerald Pendant',no:'Selva smaragdanheng'},
+    desc:{en:'A substantial emerald in a clean silver bezel, on a fine chain.',no:'En markant smaragd i ren sølvfatning, på en fin kjede.'}},
+  {id:'h-1',cat:'Heritage',img:'images/pendant-heritage-1.jpg',price:4490,tag:{en:'One of a kind',no:'Unikt'},
+    name:{en:'Muisca Guardian Pendant',no:'Muisca vokter-anheng'},
+    desc:{en:'A hand-crafted figurative silver pendant with set emeralds, inspired by pre-Columbian art.',no:'Et håndlaget figurativt sølvanheng med innfattede smaragder, inspirert av før-colombiansk kunst.'}},
+  {id:'h-2',cat:'Heritage',img:'images/pendant-heritage-2.jpg',price:4290,tag:{en:'One of a kind',no:'Unikt'},
+    name:{en:'Tumbaga Sun Pendant',no:'Tumbaga sol-anheng'},
+    desc:{en:'An ornate silver piece with emerald accents — a true collector\u2019s statement.',no:'Et forseggjort sølvsmykke med smaragd-detaljer — et ekte samleobjekt.'}},
 ];
 const GALLERY=[
-  {img:'images/gallery-1.jpg',cls:'tall'},{img:'images/gallery-2.jpg',cls:''},{img:'images/gallery-3.jpg',cls:''},
-  {img:'images/gallery-4.jpg',cls:'wide'},{img:'images/gallery-5.jpg',cls:''},{img:'images/gallery-6.jpg',cls:''},
+  {img:'images/ear-drop-2.jpg',cls:'tall'},{img:'images/ring-solitaire-1.jpg',cls:''},{img:'images/ring-halo-1.jpg',cls:''},
+  {img:'images/pendant-heritage-2.jpg',cls:'wide'},{img:'images/ring-dainty-2.jpg',cls:''},{img:'images/pendant-1.jpg',cls:''},
+  {img:'images/ring-emeraldcut-1.jpg',cls:''},{img:'images/pendant-heritage-1.jpg',cls:''},
 ];
 const fmt=n=>'kr '+n.toLocaleString('no-NO');
+const CAT_ORDER=['Rings','Earrings','Pendants','Heritage'];
 
-/* placeholder helper */
-function slot(img,label,extra){
-  return `<div class="imgslot ${extra||''}"><img src="${img}" alt="${label}" onerror="this.style.display='none'"><div class="ph"><span class="g">💚</span><small>${label}</small></div></div>`;
+function slot(img,label,extra){return `<div class="imgslot ${extra||''}"><img src="${img}" alt="${label}" onerror="this.style.display='none'"><div class="ph"><span class="g">💚</span><small>${label}</small></div></div>`;}
+
+/* ── i18n apply ── */
+function applyI18n(){
+  document.documentElement.lang=lang;
+  document.getElementById('lang-no').classList.toggle('on',lang==='no');
+  document.getElementById('lang-en').classList.toggle('on',lang==='en');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');const v=t(k);if(typeof v==='string')el.textContent=v;});
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{el.innerHTML=t(el.getAttribute('data-i18n-html'));});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=t(el.getAttribute('data-i18n-ph'));});
+  // strip
+  document.getElementById('stripWrap').innerHTML=t('strip').map(s=>`<span>${s}</span>`).join('');
+  // story list
+  document.getElementById('storyList').innerHTML=t('story').map(([b,p])=>`<li><span class="c">✓</span><div><b>${b}</b><p>${p}</p></div></li>`).join('');
+  // gifts
+  document.getElementById('giftGrid').innerHTML=t('gifts').map(([g,h,p])=>`<div class="gift"><div class="g">${g}</div><h3>${h}</h3><p>${p}</p></div>`).join('');
+  // footer copy keeps year
+  const fc=document.querySelector('[data-i18n="foot_copy"]');if(fc)fc.innerHTML='© '+new Date().getFullYear()+' '+t('foot_copy');
+  renderCats();renderProducts();updateCart();
 }
+function setLang(l){lang=l;try{localStorage.setItem('smg-lang',l);}catch(e){}applyI18n();}
 
-/* ── products + categories ── */
+/* ── products ── */
 let activeCat='All';
 function renderCats(){
-  const cats=['All',...[...new Set(PRODUCTS.map(p=>p.cat))]];
-  document.getElementById('cats').innerHTML=cats.map(c=>`<button class="${c===activeCat?'active':''}" onclick="setCat('${c}')">${c}</button>`).join('');
+  const cats=['All',...CAT_ORDER.filter(c=>PRODUCTS.some(p=>p.cat===c))];
+  document.getElementById('cats').innerHTML=cats.map(c=>{const label=c==='All'?t('cat_all'):t('cat_'+c);return `<button class="${c===activeCat?'active':''}" onclick="setCat('${c}')">${label}</button>`;}).join('');
 }
 function setCat(c){activeCat=c;renderCats();renderProducts();}
 function renderProducts(){
@@ -378,35 +448,33 @@ function renderProducts(){
   document.getElementById('products').innerHTML=list.map(p=>`
     <div class="product">
       <div style="position:relative">
-        ${p.tag?`<span class="tag">${p.tag}</span>`:''}
-        ${slot(p.img,p.name)}
+        ${p.tag?`<span class="tag">${p.tag[lang]}</span>`:''}
+        <div onclick="openLbByImg('${p.img}')">${slot(p.img,p.name[lang])}</div>
       </div>
       <div class="body">
-        <h3>${p.name}</h3>
-        <div class="desc">${p.desc}</div>
+        <h3>${p.name[lang]}</h3>
+        <div class="desc">${p.desc[lang]}</div>
         <div class="row">
-          <div class="price">${fmt(p.price)} <small>incl. VAT</small></div>
-          <button class="add" data-id="${p.id}" onclick="addToCart('${p.id}',this)">Add to cart</button>
+          <div class="price">${fmt(p.price)} <small>${t('incl')}</small></div>
+          <button class="add" onclick="addToCart('${p.id}',this)">${t('add')}</button>
         </div>
       </div>
     </div>`).join('');
 }
 
 /* ── gallery + lightbox ── */
-function renderGallery(){
-  document.getElementById('gallery').innerHTML=GALLERY.map((g,i)=>
-    `<div class="cell ${g.cls}" onclick="openLb(${i})">${slot(g.img,'Gallery '+(i+1))}</div>`).join('');
-}
-let lbIndex=0;
-function openLb(i){lbIndex=i;showLb();document.getElementById('lightbox').classList.add('open');}
+function renderGallery(){document.getElementById('gallery').innerHTML=GALLERY.map((g,i)=>`<div class="cell ${g.cls}" onclick="openLb(${i})">${slot(g.img,'Gallery '+(i+1))}</div>`).join('');}
+let lbList=[],lbIndex=0;
+function openLb(i){lbList=GALLERY.map(g=>g.img);lbIndex=i;showLb();document.getElementById('lightbox').classList.add('open');}
+function openLbByImg(img){lbList=[img];lbIndex=0;showLb();document.getElementById('lightbox').classList.add('open');}
 function closeLb(){document.getElementById('lightbox').classList.remove('open');}
-function lbStep(d){lbIndex=(lbIndex+d+GALLERY.length)%GALLERY.length;showLb();}
-function showLb(){const img=document.getElementById('lbImg');img.src=GALLERY[lbIndex].img;img.onerror=()=>{img.alt='Image not uploaded yet';};}
+function lbStep(d){if(!lbList.length)return;lbIndex=(lbIndex+d+lbList.length)%lbList.length;showLb();}
+function showLb(){document.getElementById('lbImg').src=lbList[lbIndex];}
 document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
 
 /* ── cart ── */
-let cart={}; // id -> qty
-function addToCart(id,btn){cart[id]=(cart[id]||0)+1;updateCart();if(btn){btn.classList.add('added');btn.textContent='Added ✓';setTimeout(()=>{btn.classList.remove('added');btn.textContent='Add to cart';},1100);}openCart();}
+let cart={};
+function addToCart(id,btn){cart[id]=(cart[id]||0)+1;updateCart();if(btn){btn.classList.add('added');btn.textContent=t('added');setTimeout(()=>{btn.classList.remove('added');btn.textContent=t('add');},1100);}openCart();}
 function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCart();}
 function removeItem(id){delete cart[id];updateCart();}
 function cartCount(){return Object.values(cart).reduce((a,b)=>a+b,0);}
@@ -415,24 +483,16 @@ function updateCart(){
   document.getElementById('cartCount').textContent=cartCount();
   const items=document.getElementById('cartItems'),foot=document.getElementById('cartFoot');
   const ids=Object.keys(cart);
-  if(ids.length===0){items.innerHTML='<div class="empty">Your cart is empty.<br>Add a piece you love.</div>';foot.style.display='none';return;}
+  if(ids.length===0){items.innerHTML=`<div class="empty">${t('cart_empty')}</div>`;foot.style.display='none';return;}
   foot.style.display='block';
   items.innerHTML=ids.map(id=>{const p=PRODUCTS.find(x=>x.id===id),q=cart[id];return `
-    <div class="citem">
-      ${slot(p.img,p.name,'th')}
-      <div class="info">
-        <div class="n">${p.name}</div><div class="p">${fmt(p.price)}</div>
-        <div class="qty"><button onclick="changeQty('${id}',-1)">−</button><span>${q}</span><button onclick="changeQty('${id}',1)">+</button></div>
-      </div>
-      <button class="rm" onclick="removeItem('${id}')">Remove</button>
-    </div>`;}).join('');
+    <div class="citem">${slot(p.img,p.name[lang],'th')}
+      <div class="info"><div class="n">${p.name[lang]}</div><div class="p">${fmt(p.price)}</div>
+        <div class="qty"><button onclick="changeQty('${id}',-1)">−</button><span>${q}</span><button onclick="changeQty('${id}',1)">+</button></div></div>
+      <button class="rm" onclick="removeItem('${id}')">${t('remove')}</button></div>`;}).join('');
   updateTotal();
 }
-function updateTotal(){
-  const ship=document.getElementById('ship-method');
-  const shipCost=ship?parseInt(ship.value||'0',10):0;
-  document.getElementById('cartTotal').textContent=fmt(subtotal()+shipCost);
-}
+function updateTotal(){const ship=document.getElementById('ship-method');const c=ship?parseInt(ship.value||'0',10):0;document.getElementById('cartTotal').textContent=fmt(subtotal()+c);}
 function openCart(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('open');}
 function closeCart(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
 
@@ -440,34 +500,22 @@ let checkoutStage=0;
 function checkout(){
   if(cartCount()===0)return;
   const fields=document.getElementById('checkoutFields'),btn=document.getElementById('checkoutBtn');
-  if(checkoutStage===0){fields.classList.add('show');btn.textContent='Place order';checkoutStage=1;
-    const sm=document.getElementById('ship-method');if(sm)sm.onchange=updateTotal;return;}
-  // validate
+  if(checkoutStage===0){fields.classList.add('show');btn.textContent=t('place');checkoutStage=1;const sm=document.getElementById('ship-method');if(sm)sm.onchange=updateTotal;return;}
   const req=['ship-name','ship-email','ship-addr','ship-zip','ship-city'];
   for(const id of req){const el=document.getElementById(id);if(!el.value.trim()){el.focus();el.style.borderColor='#b4442e';return;}el.style.borderColor='';}
-  const email=document.getElementById('ship-email').value;
-  if(!/.+@.+\..+/.test(email)){document.getElementById('ship-email').focus();return;}
-  // "place" the order (stub — no real payment/backend)
-  const order={items:cart,subtotal:subtotal(),ship:document.getElementById('ship-method').value,
-    to:{name:document.getElementById('ship-name').value,email,addr:document.getElementById('ship-addr').value,
-        zip:document.getElementById('ship-zip').value,city:document.getElementById('ship-city').value}};
+  const email=document.getElementById('ship-email').value;if(!/.+@.+\..+/.test(email)){document.getElementById('ship-email').focus();return;}
+  const order={items:cart,subtotal:subtotal(),to:{name:document.getElementById('ship-name').value,email}};
   console.info('[smaragdify] order (stub):',order);
   const ref='SMG-'+Date.now().toString(36).toUpperCase().slice(-6);
   fields.classList.remove('show');btn.style.display='none';
   const ok=document.getElementById('okMsg');ok.classList.add('show');
-  ok.innerHTML=`✓ Thank you, ${order.to.name.split(' ')[0]}!<br>Order <b>${ref}</b> received — a confirmation would be sent to ${email}.<br><small style="opacity:.85">Demo checkout — no payment was taken.</small>`;
+  ok.innerHTML=t('order_ok')(order.to.name.split(' ')[0],ref,email);
   cart={};document.getElementById('cartCount').textContent='0';
 }
 
-/* contact + init */
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();const m=document.getElementById('contactMsg');
-  console.info('[smaragdify] contact:',{name:cname.value,email:cemail.value,msg:cmsg.value});
-  m.textContent='✓ Thank you — Smaragdify AS will be in touch shortly.';e.target.reset();
-  setTimeout(()=>m.textContent='',5000);
-});
+document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();const m=document.getElementById('contactMsg');console.info('[smaragdify] contact:',{name:cname.value,email:cemail.value});m.textContent=t('contact_ok');e.target.reset();setTimeout(()=>m.textContent='',5000);});
 document.getElementById('yr').textContent=new Date().getFullYear();
-renderCats();renderProducts();renderGallery();updateCart();
+renderGallery();applyI18n();
 </script>
 </body>
 </html>
